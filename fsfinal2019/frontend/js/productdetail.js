@@ -49,7 +49,17 @@ $(function () {
     $("#confirmdelete").click(function () {
         // #15 Get a selected product and go back to product list
         // use $.get and winidow.location.href
-
+        $.ajax({
+            url: '/script.cgi',
+            type: 'DELETE',
+            data: editproduct,
+            success: function(result) {
+                $("#modalbody").text("Updated product " + pid);
+                $('#alertModal').modal('toggle');
+                // Do something with the result
+                getData();
+            }
+        });
         // ===============================
     });
 });
