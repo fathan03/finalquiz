@@ -11,8 +11,8 @@ $(function () {
         // #14 Get a selected product and display as a form
         // use $.get
         $("#plist").empty();
-        var txt = $("input").val();
-            $.get("demo_ajax_getint.asp",{suggest:txt}, function(result){
+        var newproduct = $("input").val();
+            $.get("demo_ajax_getint.asp",{suggest:newproduct}, function(result){
             $("span").html(result);
 
             });
