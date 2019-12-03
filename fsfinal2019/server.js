@@ -20,6 +20,8 @@ app.use(bodyParser.json());
 
 // #3 Serve static content in folder frontend
 
+    app.use(express.static('fronted'));
+
 // ===============================
 
 
