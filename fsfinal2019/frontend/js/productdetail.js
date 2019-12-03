@@ -11,8 +11,8 @@ $(function () {
         // #14 Get a selected product and display as a form
         // use $.get
         $("#plist").empty();
-        var newproduct = $("input").val();
-            $.get("/api/products/"+ pid,{newproduct}, function(result){
+        var editproduct = $("input").val();
+            $.get("/api/products/"+ pid,{editproduct}, function(result){
             $("span").html(result);
 
             });
