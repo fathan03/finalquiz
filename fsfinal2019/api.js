@@ -50,7 +50,10 @@ function deleteProductById(req, res) {
 function addProduct(req, res) {
     var payload = req.body
     // #9 Add a new product 
-
+    Product.find({ "_pid": pid }, function (err, products) {
+        if (err) res.status(500).json(err);
+        res.json(products);
+    });
     // ===============================
 }
 
