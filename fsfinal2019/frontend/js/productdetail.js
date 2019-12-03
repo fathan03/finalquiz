@@ -12,7 +12,7 @@ $(function () {
         // use $.get
         $("#plist").empty();
         var newproduct = $("input").val();
-            $.get("demo_ajax_getint.asp",{suggest:newproduct}, function(result){
+            $.get("/api/products/"+ pid,{newproduct}, function(result){
             $("span").html(result);
 
             });
