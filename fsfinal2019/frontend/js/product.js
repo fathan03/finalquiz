@@ -36,7 +36,7 @@ $(function () {
         // #13 Add new products by calling api
         // use $.post
         $("input").keyup(function(){
-            $.post("demo_ajax_getint.asp",{suggest:newproduct}, function(result){
+            $.post("/api/products",{newproduct}, function(result){
             $("span").html(result);
 
             });
