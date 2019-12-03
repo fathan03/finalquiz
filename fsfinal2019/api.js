@@ -27,7 +27,7 @@ function getProductById(req, res) {
 }
 
 function updateProductById(req, res) {
-    var payload = req.body
+    var payload = req.body;
     var pid = req.params.pid;    
     // #7 Update a product by ID (findByIdAndUpdate)
     Product.findByIdAndUpdate(pid, payload, function (err) {
@@ -40,7 +40,10 @@ function updateProductById(req, res) {
 function deleteProductById(req, res) {
     var pid = req.params.pid;    
     // #8 Delete a product by ID (findByIdAndDelete)
-
+    Product.findByIdAndRemove(pid, function (err) {
+        if (err) res.status(500).json(err);
+        res.json({ status: "Delete a product" });
+    });
     // ===============================
 }
 
