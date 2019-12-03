@@ -7,6 +7,11 @@ $(function () {
 
     function getData(){
         $("#plist").empty();
+        var txt = $("input").val();
+            $.get("demo_ajax_getint.asp",{suggest:txt}, function(result){
+            $("span").html(result);
+
+            });
         // #12 Get all products and display as a table
         // use $.get
 
