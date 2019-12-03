@@ -1,6 +1,7 @@
 // call the packages we need
 // #1 Add express package to the app
 var express = require("express");
+var cors = cors();
 // ===============================
 
 var app = express();   
@@ -66,6 +67,7 @@ app.delete('/api/products/:id', function (req, res) {
 app.use('/api', cors(), router);
 
 // #10 Start the server
-var port = process.env.PORT || 8080;
+app.listen(port, function () {
 // ===============================
 console.log('Magic happens on http://localhost:' + port);
+});
