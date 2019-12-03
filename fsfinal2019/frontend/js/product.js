@@ -30,7 +30,14 @@ $(function () {
 
         // #13 Add new products by calling api
         // use $.post
+        $("input").keyup(function(){
+            var txt = $("input").val();
+            $.post("demo_ajax_getint.asp",{suggest:txt}, function(result){
+            $("span").html(result);
 
+            });
+
+        });
         // ===============================
 
     });
